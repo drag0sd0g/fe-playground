@@ -1,9 +1,9 @@
 import React from "react";
 
-class NameForm extends React.Component {
+class FlavorForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: "coconut" };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,7 +14,7 @@ class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert("a name was submitted");
+    alert("favourite flava is " + this.state.value);
     event.preventDefault();
   }
 
@@ -22,12 +22,13 @@ class NameForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Name:
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
+          What's your flava?
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">grapefruit</option>
+            <option value="lime">lime</option>
+            <option value="coconut">coconut</option>
+            <option value="mango">mango</option>
+          </select>
         </label>
         <input type="submit" value="Submit" />
       </form>
@@ -35,4 +36,4 @@ class NameForm extends React.Component {
   }
 }
 
-export default NameForm;
+export default FlavorForm;
