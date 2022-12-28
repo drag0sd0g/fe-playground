@@ -6,6 +6,7 @@ import Reservation from "./Reservation";
 import Clock from "./Clock";
 import TemperatureCalculator from "./Temperature";
 import FilterableProductTable from "./FilterableProductTable";
+import HookExample from "./HookExample";
 
 const PRODUCTS = [
   {
@@ -57,5 +58,7 @@ root.render(
     <TemperatureCalculator />
     <br />
     <FilterableProductTable products={PRODUCTS} />
+    <br />
+    <HookExample />
   </>
 );
